@@ -10,8 +10,8 @@ The dataset used contains historical stock price data from NSE (TATA Global), in
 
 stock_app/
 │
-├── app.py                # Streamlit dashboard
-├── utils.py              # Data processing, models, and visualizations
+├── app.py             
+├── utils.py            
 ├── data/
 │   └── NSE-TATAGLOBAL.csv
 ├── requirements.txt
