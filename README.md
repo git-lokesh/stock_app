@@ -4,18 +4,6 @@ This project is a Streamlit-based web dashboard for analyzing and forecasting st
 
 The dataset used contains historical stock price data from NSE (TATA Global), including Open, High, Low, Close prices and trading volume.
 
----
-
-## Project Structure
-
-stock_app/
-│
-├── app.py             
-├── utils.py            
-├── data/
-│   └── NSE-TATAGLOBAL.csv
-├── requirements.txt
-└── README.md
 
 ---
 
