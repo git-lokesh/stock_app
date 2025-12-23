@@ -1,41 +1,53 @@
 # Stock Price Time Series Analysis and Forecasting
 
-This project is a Streamlit-based web dashboard for analyzing and forecasting stock prices using classical time series techniques. The application performs exploratory data analysis, stationarity testing, time series decomposition, and forecasting using multiple models.
+This project is a Streamlit-based web dashboard for analyzing and forecasting stock prices using classical time series techniques. The application performs exploratory data analysis, stationarity testing, time series decomposition, and forecasting using multiple statistical models.
 
-The dataset used contains historical stock price data from NSE (TATA Global), including Open, High, Low, Close prices and trading volume.
+The dataset contains historical stock price data from NSE (TATA Global), including Open, High, Low, Close prices and trading volume.
 
+---
+
+## Project Structure
+
+```text
+stock_app/
+├── app.py
+├── utils.py
+├── requirements.txt
+├── README.md
+└── data/
+    └── NSE-TATAGLOBAL.csv
+```
 
 ---
 
 ## Features
 
-The dashboard provides the following visualizations and analyses:
+### 1. Raw Price Visualizations
+- Time series plots of Open, High, Low, Close prices
+- Trading volume and turnover trends
 
-1. Raw Price Visualizations  
-   - Time series plots of Open, High, Low, Close, Volume, and Turnover  
+### 2. Stationarity Analysis
+- Log transformation and differencing
+- Rolling mean and rolling standard deviation
+- Augmented Dickey-Fuller (ADF) test results
 
-2. Stationarity Analysis  
-   - Log transformation and differencing  
-   - Rolling mean and rolling standard deviation  
-   - Augmented Dickey-Fuller (ADF) test results  
+### 3. Time Series Decomposition
+- Trend component
+- Seasonal component
+- Residual component
 
-3. Time Series Decomposition  
-   - Trend component  
-   - Seasonal component  
-   - Residual component  
+### 4. Forecasting Models
+- Moving Average forecasting
+- Auto ARIMA forecasting
+- SARIMA forecasting
 
-4. Forecasting Models  
-   - Moving Average forecasting  
-   - Auto ARIMA forecasting  
-   - SARIMA forecasting  
-
-Each analysis is separated into clearly labeled sections in the Streamlit dashboard.
+Each analysis is separated into clearly labeled sections in the Streamlit dashboard and can be selected using the sidebar.
 
 ---
 
 ## Dataset Description
 
-Columns in the dataset:
+The dataset contains the following columns:
 
 - Date  
 - Open  
@@ -44,9 +56,9 @@ Columns in the dataset:
 - Last  
 - Close  
 - Total Trade Quantity  
-- Turnover (Lacs)  
+- Turnover (Lacs)
 
-The Date column is converted to datetime format and used as the index for time series modeling.
+The `Date` column is converted to datetime format and used as the index for all time series modeling and analysis.
 
 ---
 
@@ -54,28 +66,28 @@ The Date column is converted to datetime format and used as the index for time s
 
 1. Clone the repository
 
-   git clone <repository-url>
-   cd stock_app
+```bash
+git clone <repository-url>
+cd stock_app
+```
 
-2. Create and activate a virtual environment (optional but recommended)
+2. Install dependencies
 
-   python -m venv venv  
-   source venv/bin/activate   (Linux/Mac)  
-   venv\Scripts\activate      (Windows)
-
-3. Install dependencies
-
-   pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
 ## Running the Application
 
-Start the Streamlit app using the command below:
+Start the Streamlit application using:
 
-   streamlit run app.py
+```bash
+streamlit run app.py
+```
 
-Once started, open the local URL shown in the terminal to access the dashboard in your browser.
+Open the local URL shown in the terminal to access the dashboard.
 
 ---
 
@@ -85,7 +97,7 @@ Once started, open the local URL shown in the terminal to access the dashboard i
 - Auto ARIMA (pmdarima)  
 - SARIMA (statsmodels)  
 
-All models are trained on log-transformed data, and predictions are visualized alongside actual values.
+All models operate on log-transformed data, and predictions are visualized alongside actual values for comparison.
 
 ---
 
@@ -103,12 +115,10 @@ All models are trained on log-transformed data, and predictions are visualized a
 
 ## Notes
 
-- This project focuses on classical statistical time series models, not deep learning.
-- The code is modular, with all logic separated from the Streamlit interface.
-- The application is suitable for academic demonstrations, portfolio projects, and interviews.
+- This project focuses on classical statistical time series models rather than deep learning approaches.
+- The codebase is modular, with analytical logic separated from the Streamlit UI.
 
----
 
-## License
 
-This project is provided for educational and learning purposes.
+
+
